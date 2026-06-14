@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ShieldCheck, Search, BellRing, FileCheck2, Building2, ArrowRight, Check, Star } from "lucide-react";
+import { ShieldCheck, Search, FileText, Building2, ArrowRight, ClipboardPaste, Sparkles, ListChecks, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,27 +8,26 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "OfferLens — Verify Opportunities Before You Apply" },
-      { name: "description", content: "OfferLens helps students verify internships and job offers, spot scams, and apply with confidence." },
+      { name: "description", content: "OfferLens helps students and fresh graduates evaluate internship and job opportunities with AI-assisted analysis of red flags, company credibility, and offer details." },
       { property: "og:title", content: "OfferLens — Verify Opportunities Before You Apply" },
-      { property: "og:description", content: "Verify internships and job offers before you apply." },
+      { property: "og:description", content: "AI-assisted analysis of internships, job offers, and company credibility for students and fresh graduates." },
     ],
   }),
   component: Landing,
 });
 
-const features = [
-  { icon: ShieldCheck, title: "Scam detection", desc: "We cross-check listings against known scam patterns and reported recruiters." },
-  { icon: Building2, title: "Company verification", desc: "Confirm the employer is real, active, and currently hiring through official channels." },
-  { icon: FileCheck2, title: "Offer review", desc: "Upload an offer letter and get a clear breakdown of red flags and missing terms." },
-  { icon: BellRing, title: "Real-time alerts", desc: "Get notified when a posting changes status or gets flagged by other students." },
-  { icon: Search, title: "Recruiter lookup", desc: "Search any recruiter to see verified history before sharing your personal info." },
-  { icon: Star, title: "Student-trusted", desc: "Reviews and signals contributed by thousands of verified student users." },
+const whyItems = [
+  { icon: Sparkles, title: "Analyze opportunities with AI", desc: "Run an AI-assisted review of internship listings, job descriptions, and offer letters to surface concerns you might miss on a quick read." },
+  { icon: ShieldCheck, title: "Identify potential red flags", desc: "Spot vague responsibilities, unrealistic compensation, upfront fees, and other warning signs before you apply or accept." },
+  { icon: Building2, title: "Research company credibility", desc: "Look at a company's online presence and stated details together, so you can assess credibility before sharing personal information." },
+  { icon: Compass, title: "Make informed career decisions", desc: "Get a clear, structured summary that supports your own judgment — not a verdict that replaces it." },
 ];
 
-const testimonials = [
-  { name: "Maya R.", role: "CS Junior, UCLA", quote: "OfferLens caught a fake recruiter who'd been DMing my entire class. Saved me hours and probably my SSN." },
-  { name: "Jordan K.", role: "Finance, NYU Stern", quote: "I check every internship here now. It's like a credit score for job postings." },
-  { name: "Priya S.", role: "Design, RISD", quote: "Clean, fast, and honest. The offer review broke down exactly what was missing from my contract." },
+const howItWorks = [
+  { step: "01", icon: ClipboardPaste, title: "Paste the details", desc: "Share a job description, offer letter text, or a company URL you want to take a closer look at." },
+  { step: "02", icon: Sparkles, title: "AI analyzes the opportunity", desc: "OfferLens reviews the content for red flags, positive indicators, and missing information." },
+  { step: "03", icon: ListChecks, title: "Review risk indicators", desc: "Read a structured breakdown with risk indicators, positive signals, and suggested questions to ask." },
+  { step: "04", icon: Compass, title: "Make a more informed decision", desc: "Use the analysis as one input into your own decision about whether to apply, follow up, or move on." },
 ];
 
 function Landing() {
@@ -43,28 +42,28 @@ function Landing() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Trusted by 12,000+ students
+              For students and fresh graduates
             </div>
             <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
               Verify Opportunities Before You Apply
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-              OfferLens checks internships, job offers, and recruiters in seconds, so you can apply with confidence and skip the scams.
+              AI-powered internship and job offer verification for students and fresh graduates. Paste a description, offer, or company URL and get a clear breakdown of risk indicators and positive signals.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/signup">
                 <Button size="lg" className="w-full sm:w-auto">
-                  Start verifying free <ArrowRight className="ml-1 h-4 w-4" />
+                  Get started <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-              <a href="#features">
+              <a href="#how-it-works">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto">See how it works</Button>
               </a>
             </div>
-            <p className="mt-4 text-xs text-muted-foreground">No credit card required · Free for students</p>
+            <p className="mt-4 text-xs text-muted-foreground">OfferLens is a decision-support tool, not a definitive verdict on any employer.</p>
           </div>
 
-          {/* Mock dashboard preview */}
+          {/* Product preview */}
           <div className="mx-auto mt-16 max-w-4xl">
             <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-primary/5">
               <div className="flex items-center gap-1.5 border-b border-border bg-secondary/50 px-4 py-2.5">
@@ -75,16 +74,16 @@ function Landing() {
               </div>
               <div className="grid gap-4 p-6 sm:grid-cols-3">
                 {[
-                  { label: "Stripe — SWE Intern", status: "Verified", tone: "good" },
-                  { label: "QuickHire Pro", status: "High risk", tone: "bad" },
-                  { label: "Anthropic — RS Intern", status: "Verified", tone: "good" },
+                  { label: "Analyze Offer", icon: FileText, desc: "Paste a job description or offer letter for review." },
+                  { label: "Company Verification", icon: Building2, desc: "Share a company URL to surface credibility signals." },
+                  { label: "Analysis History", icon: ListChecks, desc: "Revisit past analyses and compare opportunities." },
                 ].map((c) => (
                   <div key={c.label} className="rounded-lg border border-border p-4">
-                    <div className="text-sm font-medium">{c.label}</div>
-                    <div className={`mt-3 inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs ${c.tone === "good" ? "bg-primary/10 text-primary" : "bg-destructive/10 text-destructive"}`}>
-                      <span className={`h-1.5 w-1.5 rounded-full ${c.tone === "good" ? "bg-primary" : "bg-destructive"}`} />
-                      {c.status}
-                    </div>
+                    <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary">
+                      <c.icon className="h-4 w-4" />
+                    </span>
+                    <div className="mt-3 text-sm font-medium">{c.label}</div>
+                    <div className="mt-1 text-xs text-muted-foreground">{c.desc}</div>
                   </div>
                 ))}
               </div>
@@ -93,16 +92,16 @@ function Landing() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Why OfferLens */}
       <section id="features" className="border-t border-border bg-background py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary">Features</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Everything you need to apply with confidence</h2>
-            <p className="mt-3 text-muted-foreground">Built specifically for students navigating noisy job boards, cold DMs, and too-good-to-be-true offers.</p>
+            <p className="text-sm font-medium text-primary">Why OfferLens</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">A clearer view of every opportunity</h2>
+            <p className="mt-3 text-muted-foreground">OfferLens is built to help students and fresh graduates think critically about internship and job opportunities — not to replace their judgment.</p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f) => (
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {whyItems.map((f) => (
               <div key={f.title} className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md">
                 <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary">
                   <f.icon className="h-5 w-5" />
@@ -115,43 +114,55 @@ function Landing() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="border-t border-border bg-secondary/30 py-20 sm:py-28">
+      {/* How It Works */}
+      <section id="how-it-works" className="border-t border-border bg-secondary/30 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary">Testimonials</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Loved by students at top schools</h2>
+            <p className="text-sm font-medium text-primary">How it works</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">From listing to informed decision in four steps</h2>
+            <p className="mt-3 text-muted-foreground">A simple workflow designed around how students actually evaluate opportunities.</p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="rounded-xl border border-border bg-card p-6">
-                <div className="flex gap-0.5 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+          <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {howItWorks.map((s) => (
+              <li key={s.step} className="rounded-xl border border-border bg-card p-6">
+                <div className="flex items-center justify-between">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary">
+                    <s.icon className="h-5 w-5" />
+                  </span>
+                  <span className="text-xs font-medium text-muted-foreground">{s.step}</span>
                 </div>
-                <blockquote className="mt-4 text-sm leading-relaxed text-foreground">“{t.quote}”</blockquote>
-                <figcaption className="mt-5 text-sm">
-                  <div className="font-medium">{t.name}</div>
-                  <div className="text-muted-foreground">{t.role}</div>
-                </figcaption>
-              </figure>
+                <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground">{s.desc}</p>
+              </li>
             ))}
-          </div>
+          </ol>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section id="mission" className="border-t border-border bg-background py-20 sm:py-28">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <p className="text-sm font-medium text-primary">Our mission</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Help students and fresh graduates evaluate internship and job opportunities with greater confidence and transparency.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
+            OfferLens shares analysis and risk indicators based on the information you provide. It is a tool to support your judgment — not a definitive verdict on any company, recruiter, or offer.
+          </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section id="pricing" className="border-t border-border bg-background py-20 sm:py-24">
+      <section id="get-started" className="border-t border-border bg-secondary/30 py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Apply smarter, starting today</h2>
-          <p className="mx-auto mt-3 max-w-xl text-muted-foreground">Join thousands of students who verify every opportunity before sharing a single detail.</p>
-          <ul className="mx-auto mt-6 flex max-w-lg flex-col items-start gap-2 text-sm text-muted-foreground sm:flex-row sm:justify-center sm:gap-6">
-            {["Free for students", "Unlimited verifications", "Cancel anytime"].map((i) => (
-              <li key={i} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" />{i}</li>
-            ))}
-          </ul>
-          <div className="mt-8">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Start evaluating opportunities with more clarity</h2>
+          <p className="mx-auto mt-3 max-w-xl text-muted-foreground">Create a free account to analyze internship descriptions, offer letters, and company URLs.</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link to="/signup">
-              <Button size="lg">Create your free account</Button>
+              <Button size="lg" className="w-full sm:w-auto">Create your account</Button>
+            </Link>
+            <Link to="/login">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">Log in</Button>
             </Link>
           </div>
         </div>
