@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "OfferLens — Verify Opportunities Before You Apply" },
+      { name: "description", content: "OfferLens helps students verify internships and job offers before applying, so you never waste time on scams or ghost listings." },
+      { name: "author", content: "OfferLens" },
+      { property: "og:title", content: "OfferLens — Verify Opportunities Before You Apply" },
+      { property: "og:description", content: "Verify internships and job offers before you apply." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@OfferLens" },
     ],
     links: [
       {
