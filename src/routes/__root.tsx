@@ -81,10 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "OfferLens helps students verify internships and job offers before applying, so you never waste time on scams or ghost listings." },
       { name: "author", content: "OfferLens" },
       { property: "og:title", content: "OfferLens — Verify Opportunities Before You Apply" },
-      { property: "og:description", content: "Verify internships and job offers before you apply." },
+      { property: "og:description", content: "OfferLens helps students verify internships and job offers before applying, so you never waste time on scams or ghost listings." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@OfferLens" },
+      { name: "twitter:title", content: "OfferLens — Verify Opportunities Before You Apply" },
+      { name: "twitter:description", content: "OfferLens helps students verify internships and job offers before applying, so you never waste time on scams or ghost listings." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/dc6e0044-d6a0-4f00-8fb9-468367795b9d/id-preview-36eb4d56--2d99b715-9b3f-41ec-82c5-e2b8dddc6fa9.lovable.app-1781702391740.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/dc6e0044-d6a0-4f00-8fb9-468367795b9d/id-preview-36eb4d56--2d99b715-9b3f-41ec-82c5-e2b8dddc6fa9.lovable.app-1781702391740.png" },
     ],
     links: [
       {
