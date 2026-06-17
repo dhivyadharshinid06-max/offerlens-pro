@@ -52,7 +52,7 @@ function Dashboard() {
   const listFn = useServerFn(listAnalyses);
   const { data: analyses } = useSuspenseQuery({
     queryKey: ["analyses"],
-    queryFn: () => listFn() as Promise<Analysis[]>,
+    queryFn: () => listFn() as unknown as Promise<Analysis[]>,
   });
 
   const metrics = useMemo(() => {
@@ -161,7 +161,7 @@ function AnalyzePanel({ type, onResult }: { type: AnalysisType; onResult: (a: An
   const analyzeFn = useServerFn(analyzeOffer);
 
   const mutation = useMutation({
-    mutationFn: (input: { type: AnalysisType; content: string }) => analyzeFn({ data: input }) as Promise<Analysis>,
+    mutationFn: (input: { type: AnalysisType; content: string }) => analyzeFn({ data: input }) as unknown as Promise<Analysis>,
     onSuccess: (result) => {
       qc.invalidateQueries({ queryKey: ["analyses"] });
       setContent("");
