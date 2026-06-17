@@ -50,14 +50,13 @@ export const analyzeOffer = createServerFn({ method: "POST" })
           : "company information";
 
     try {
-      const { experimental_output } = await generateText({
+      const { object: result } = await generateObject({
         model: gateway("google/gemini-3-flash-preview"),
         system: SYSTEM_PROMPT,
         prompt: `Analyze the following ${typeLabel} and return structured risk analysis.\n\n---\n${data.content}\n---`,
-        experimental_output: Output.object({ schema: AnalysisSchema }),
+        schema: AnalysisSchema,
       });
 
-      const result = experimental_output;
 
       const { data: row, error } = await context.supabase
         .from("analyses")
