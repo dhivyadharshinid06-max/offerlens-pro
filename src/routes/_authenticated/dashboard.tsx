@@ -70,7 +70,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary/30">
+    <div className="min-h-dvh bg-secondary/30">
       <header className="border-b border-border bg-background">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
           <Link to="/" className="flex items-center gap-2">
@@ -117,10 +117,11 @@ function Dashboard() {
                   key={t.key}
                   role="tab"
                   aria-selected={activeTab}
+                  aria-label={t.label}
                   onClick={() => setTab(t.key)}
-                  className={`inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors ${activeTab ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                  className={`inline-flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors ${activeTab ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
                 >
-                  <t.icon className="h-4 w-4" />
+                  <t.icon className="h-4 w-4" aria-hidden="true" />
                   <span className="hidden sm:inline">{t.label}</span>
                 </button>
               );
@@ -252,7 +253,7 @@ function HistoryPanel({ analyses, onOpen }: { analyses: Analysis[]; onOpen: (a: 
   return (
     <section className="rounded-xl border border-border bg-card p-6">
       <h2 className="text-lg font-semibold tracking-tight">Analysis history</h2>
-      <p className="mt-1 text-sm text-muted-foreground">Tap a row to see the full analysis.</p>
+      <p className="mt-1 text-sm text-muted-foreground">Select a row to see the full analysis.</p>
       <ul className="mt-6 divide-y divide-border">
         {analyses.map((a) => (
           <li key={a.id} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4">
