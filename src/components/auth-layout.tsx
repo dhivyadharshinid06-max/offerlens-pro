@@ -4,9 +4,9 @@ import type { ReactNode } from "react";
 
 export function AuthLayout({ title, subtitle, children, footer }: { title: string; subtitle: string; children: ReactNode; footer: ReactNode }) {
   return (
-    <div className="min-h-dvh bg-background">
-      <div className="mx-auto flex min-h-dvh max-w-md flex-col px-4 py-10 sm:px-6">
-        <Link to="/" aria-label="OfferLens home" className="inline-flex items-center gap-2">
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col px-4 py-10 sm:px-6">
+        <Link to="/" className="inline-flex items-center gap-2">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
             <ShieldCheck className="h-4 w-4" />
           </span>

@@ -59,7 +59,7 @@ function LoginPage() {
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="space-y-1.5">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" placeholder="you@example.com" required autoComplete="email" />
+          <Input id="email" name="email" type="email" placeholder="you@school.edu" required autoComplete="email" />
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="password">Password</Label>
