@@ -13,9 +13,9 @@ export function SiteHeader() {
           <span className="text-base font-semibold tracking-tight">OfferLens</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-          <a href="/#features" className="hover:text-foreground">Features</a>
-          <a href="/#testimonials" className="hover:text-foreground">Testimonials</a>
-          <a href="/#pricing" className="hover:text-foreground">Pricing</a>
+          <a href="/#features" className="hover:text-foreground">Why OfferLens</a>
+          <a href="/#how-it-works" className="hover:text-foreground">How it works</a>
+          <a href="/#mission" className="hover:text-foreground">Mission</a>
         </nav>
         <div className="flex items-center gap-2">
           <Link to="/login" className="hidden sm:inline-flex">

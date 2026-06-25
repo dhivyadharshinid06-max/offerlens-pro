@@ -55,7 +55,7 @@ function SignupPage() {
   return (
     <AuthLayout
       title="Create your account"
-      subtitle="Free for students. Verify your first opportunity in under a minute."
+      subtitle="Sign up to start analyzing internship and job opportunities."
       footer={<>Already have an account? <Link to="/login" className="font-medium text-primary hover:underline">Log in</Link></>}
     >
       <Button type="button" variant="outline" className="w-full" onClick={handleGoogle} disabled={googleLoading}>
@@ -71,7 +71,7 @@ function SignupPage() {
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" placeholder="you@school.edu" required autoComplete="email" />
+          <Input id="email" name="email" type="email" placeholder="you@example.com" required autoComplete="email" />
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="password">Password</Label>
@@ -81,9 +81,6 @@ function SignupPage() {
         <Button type="submit" className="w-full" disabled={loading}>
           {loading ? "Creating account…" : "Create account"}
         </Button>
-        <p className="text-center text-xs text-muted-foreground">
-          By signing up you agree to our Terms and Privacy Policy.
-        </p>
       </form>
     </AuthLayout>
   );
